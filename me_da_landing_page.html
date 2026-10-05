@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me Đá - Năng Lượng Chữa Lành</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'earth-dark': '#4A3525',
+                        'earth-medium': '#7A5B42',
+                        'earth-light': '#B8977E',
+                        'paper-bg': '#F4F0EA',
+                        'paper-light': '#FDFBF7',
+                        'accent-leaf': '#5C6B46',
+                    },
+                    fontFamily: {
+                        serif: ['Lora', 'serif'],
+                        sans: ['Nunito', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F4F0EA;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='#7a5b42' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            color: #4A3525;
+            scroll-behavior: smooth;
+        }
+        
+        .polaroid {
+            background: white;
+            padding: 15px 15px 40px 15px;
+            box-shadow: 0 10px 25px rgba(74, 53, 37, 0.15);
+            border-radius: 4px;
+            transform: rotate(-2deg);
+            transition: transform 0.3s ease;
+        }
+        
+        .polaroid:hover {
+            transform: rotate(1deg) scale(1.02);
+        }
+
+        .paper-card {
+            background: #FDFBF7;
+            box-shadow: 0 4px 15px rgba(74, 53, 37, 0.08);
+            border: 1px solid rgba(122, 91, 66, 0.15);
+        }
+
+        .text-shadow-subtle {
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-earth-dark">
+
+    <header class="fixed w-full top-0 z-50 bg-paper-light/90 backdrop-blur-md shadow-sm border-b border-earth-medium/20 transition-all duration-300" id="header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-earth-medium text-white rounded-full flex items-center justify-center overflow-hidden border-2 border-earth-dark">
+                            <!-- Placeholder if image fails, actual image is below -->
+                            <img src="https://scontent.fhan14-5.fna.fbcdn.net/v/t39.30808-6/811236365_122097493143482236_1284971828628952661_n.jpg?stp=dst-jpg_tt6&cstp=mx2000x2000&ctp=s2000x2000&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEN1afu83_Qwp2gowVxpOcVBjy26nmDKvsGPLbqeYMq-zsmoHAUQJ1ZStvdYveyfMgbRC85SVeVc6P1o082Gedo&_nc_ohc=fYwh01hKOnoQ7kNvwF5EyMG&_nc_oc=Adqz-kgMxe5Bw_MJyC19cmPKedoZ3BDxMh1mw5-yHoLcCZHZ0zXdFsEaPRBin1bHl_E&_nc_zt=23&_nc_ht=scontent.fhan14-5.fna&_nc_gid=Mx8id8oPlYkUManthg6ciA&_nc_ss=7b2a8&oh=00_AQMCKHfCGOSppEE8T0e-FsB5tMcM4XJyI9UbjV4bbT_jyQ&oe=6AC9766B" alt="Me Đá Logo" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/100x100/7A5B42/FFFFFF?text=M%C3%AA';">
+                        </div>
+                        <span class="font-serif font-bold text-2xl tracking-wide text-earth-dark">MÊ Đá</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-earth-medium hover:text-earth-dark font-semibold transition-colors duration-200">Trang chủ</a>
+                    <a href="#story" class="text-earth-medium hover:text-earth-dark font-semibold transition-colors duration-200">Câu chuyện</a>
+                    <a href="#logo" class="text-earth-medium hover:text-earth-dark font-semibold transition-colors duration-200">Ý nghĩa Logo</a>
+                    <a href="#gallery" class="text-earth-medium hover:text-earth-dark font-semibold transition-colors duration-200">Khách hàng</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-earth-dark hover:text-earth-medium focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-paper-light border-b border-earth-medium/20">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-earth-dark hover:bg-earth-light/20">Trang chủ</a>
+                <a href="#story" class="block px-3 py-2 rounded-md text-base font-medium text-earth-dark hover:bg-earth-light/20">Câu chuyện</a>
+                <a href="#logo" class="block px-3 py-2 rounded-md text-base font-medium text-earth-dark hover:bg-earth-light/20">Ý nghĩa Logo</a>
+                <a href="#gallery" class="block px-3 py-2 rounded-md text-base font-medium text-earth-dark hover:bg-earth-light/20">Khách hàng</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden min-h-[90vh] flex items-center">
+        <!-- Background decoration -->
+        <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+            <div class="absolute top-20 left-10 w-64 h-64 bg-earth-light rounded-full mix-blend-multiply filter blur-3xl opacity-70"></div>
+            <div class="absolute bottom-20 right-10 w-72 h-72 bg-accent-leaf rounded-full mix-blend-multiply filter blur-3xl opacity-40"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <p class="text-accent-leaf font-bold tracking-widest uppercase mb-4 text-sm md:text-base">Thức uống của tuổi thơ</p>
+                <h1 class="text-5xl md:text-7xl font-serif font-bold text-earth-dark mb-6 leading-tight text-shadow-subtle">
+                    Hương vị mộc mạc, <br class="hidden md:block">
+                    <span class="text-earth-medium italic">năng lượng chữa lành</span>
+                </h1>
+                <p class="text-lg md:text-xl text-earth-dark/80 mb-10 font-medium max-w-2xl mx-auto leading-relaxed">
+                    Giữa phố thị ồn ào, Mê Đá mang đến một khoảng lặng bình yên. Thưởng thức hương vị dân dã, nhớ về nguồn cội và thả lỏng tâm hồn.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#story" class="inline-block bg-earth-dark text-paper-bg px-8 py-4 rounded-full font-bold text-lg hover:bg-earth-medium transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                        Khám phá câu chuyện
+                    </a>
+                    <a href="#gallery" class="inline-block bg-transparent border-2 border-earth-dark text-earth-dark px-8 py-4 rounded-full font-bold text-lg hover:bg-earth-dark hover:text-paper-bg transition-all duration-300">
+                        Xem hình ảnh
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="story" class="py-20 bg-paper-light/50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-earth-dark mb-4">Tại sao lại là Me Đá?</h2>
+                <div class="w-24 h-1 bg-earth-medium mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <!-- Text Content -->
+                <div class="space-y-8 order-2 md:order-1">
+                    <div class="paper-card p-8 rounded-2xl relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                            <i class="fas fa-leaf text-6xl text-earth-dark"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-earth-dark mb-3 flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-full bg-earth-light/30 flex items-center justify-center text-earth-dark"><i class="fas fa-mug-hot text-sm"></i></span>
+                            Sự dân dã đời thường
+                        </h3>
+                        <p class="text-earth-dark/80 leading-relaxed text-lg">
+                            Lấy nguyên mẫu từ thức uống quen thuộc, mộc mạc như <strong class="text-earth-medium">trà đá vỉa hè</strong> - nét đặc trưng không đâu có của Việt Nam. Me đá mang năng lượng chữa lành, giúp bạn thả lỏng sau những bộn bề.
+                        </p>
+                    </div>
+
+                    <div class="paper-card p-8 rounded-2xl relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                            <i class="fas fa-mountain-sun text-6xl text-earth-dark"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-earth-dark mb-3 flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-full bg-earth-light/30 flex items-center justify-center text-earth-dark"><i class="fas fa-water text-sm"></i></span>
+                            Sự tích Núi & Nước
+                        </h3>
+                        <p class="text-earth-dark/80 leading-relaxed text-lg">
+                            Me mọc ở vùng núi (phía Bắc, Tây Nguyên), đá đại diện cho sông suối biển cả. Sự kết hợp gợi nhớ truyền thuyết <strong class="text-earth-medium">Lạc Long Quân - Âu Cơ</strong>, về nguồn cội của 100 người con đất Việt.
+                        </p>
+                    </div>
+
+                    <div class="paper-card p-8 rounded-2xl relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                            <i class="fas fa-seedling text-6xl text-earth-dark"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-earth-dark mb-3 flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-full bg-earth-light/30 flex items-center justify-center text-earth-dark"><i class="fas fa-globe-asia text-sm"></i></span>
+                            Màu của Đất Mẹ
+                        </h3>
+                        <p class="text-earth-dark/80 leading-relaxed text-lg">
+                            Màu nâu của me đá gợi lên màu của đất - biểu tượng nguyên bản của sự dung dị, tinh thần kiên cường. Nó gợi về gốc rễ nông nghiệp, đánh thức <strong class="text-earth-medium">tình yêu nước</strong> và lòng tự hào dân tộc.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Abstract Illustration / Graphic -->
+                <div class="order-1 md:order-2 flex justify-center">
+                    <div class="relative w-full max-w-md aspect-square">
+                        <div class="absolute inset-0 bg-earth-light rounded-full mix-blend-multiply filter blur-2xl opacity-50 animate-pulse"></div>
+                        <div class="absolute inset-4 border-2 border-dashed border-earth-medium rounded-full animate-[spin_60s_linear_infinite]"></div>
+                        <div class="absolute inset-8 bg-paper-light rounded-full shadow-2xl flex flex-col items-center justify-center p-8 text-center overflow-hidden">
+                            <i class="fas fa-tree text-earth-medium text-4xl mb-4"></i>
+                            <h4 class="font-serif font-bold text-2xl text-earth-dark mb-2">Thông điệp</h4>
+                            <p class="text-earth-dark/70 font-medium">Uống để nhớ về nguồn gốc, chữa lành những áp lực đời thường.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="logo" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-earth-dark rounded-[3rem] p-8 md:p-16 shadow-2xl relative overflow-hidden">
+                <!-- Decorative background elements -->
+                <div class="absolute top-0 right-0 -mt-16 -mr-16 text-earth-medium opacity-20">
+                    <svg width="300" height="300" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z"/>
+                    </svg>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+                    <!-- Logo Image -->
+                    <div class="flex justify-center lg:justify-end">
+                        <div class="w-64 h-64 md:w-80 md:h-80 bg-paper-bg rounded-full p-4 shadow-xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                            <img src="https://scontent.fhan14-5.fna.fbcdn.net/v/t39.30808-6/811236365_122097493143482236_1284971828628952661_n.jpg?stp=dst-jpg_tt6&cstp=mx2000x2000&ctp=s2000x2000&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEN1afu83_Qwp2gowVxpOcVBjy26nmDKvsGPLbqeYMq-zsmoHAUQJ1ZStvdYveyfMgbRC85SVeVc6P1o082Gedo&_nc_ohc=fYwh01hKOnoQ7kNvwF5EyMG&_nc_oc=Adqz-kgMxe5Bw_MJyC19cmPKedoZ3BDxMh1mw5-yHoLcCZHZ0zXdFsEaPRBin1bHl_E&_nc_zt=23&_nc_ht=scontent.fhan14-5.fna&_nc_gid=Mx8id8oPlYkUManthg6ciA&_nc_ss=7b2a8&oh=00_AQMCKHfCGOSppEE8T0e-FsB5tMcM4XJyI9UbjV4bbT_jyQ&oe=6AC9766B" alt="Logo Con Rùa" class="w-full h-full object-contain rounded-full border-4 border-earth-medium/20" onerror="this.onerror=null; this.src='https://placehold.co/400x400/7A5B42/F4F0EA?text=Turtle+Logo';">
+                        </div>
+                    </div>
+
+                    <!-- Logo Text -->
+                    <div class="text-paper-bg">
+                        <h2 class="text-3xl md:text-5xl font-serif font-bold mb-6 text-paper-light">Ý nghĩa Logo:<br>Tại sao lại là con rùa?</h2>
+                        <div class="w-20 h-1 bg-earth-light mb-8"></div>
+                        
+                        <div class="space-y-6 text-lg text-paper-bg/90">
+                            <p>
+                                Nếu "MÊ Đá" gợi về nguồn gốc con người Việt Nam, thì hình ảnh con rùa lại là câu chuyện về <strong>quá trình dựng nước và giữ nước</strong>.
+                            </p>
+                            
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-4">
+                                    <div class="mt-1 bg-earth-light/20 p-2 rounded-full text-earth-light">
+                                        <i class="fas fa-shield-halved"></i>
+                                    </div>
+                                    <div>
+                                        <strong class="text-paper-light block mb-1">Linh vật hộ mệnh</strong>
+                                        Rùa gợi nhớ cụ rùa Hồ Gươm, thần Kim Quy giúp An Dương Vương xây thành, trao gươm cho Lê Lợi. Nó là biểu tượng sâu sắc, gắn liền với lịch sử bảo vệ đất nước.
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <div class="mt-1 bg-earth-light/20 p-2 rounded-full text-earth-light">
+                                        <i class="fas fa-shoe-prints"></i>
+                                    </div>
+                                    <div>
+                                        <strong class="text-paper-light block mb-1">Chậm và chắc</strong>
+                                        Đặc tính của rùa truyền tải thông điệp sống: <em>hãy sống chậm lại, suy nghĩ sâu sắc hơn, chữa lành tâm hồn để vững bước trên mọi chặng đường.</em>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-20 bg-paper-bg relative overflow-hidden">
+        <!-- Leaves decoration -->
+        <div class="absolute top-0 left-0 text-earth-medium/10 -translate-x-1/2 -translate-y-1/2">
+            <i class="fas fa-leaf text-9xl"></i>
+        </div>
+        <div class="absolute bottom-0 right-0 text-earth-medium/10 translate-x-1/2 translate-y-1/2 rotate-180">
+            <i class="fas fa-leaf text-9xl"></i>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-earth-dark mb-4">Khoảnh khắc mộc mạc</h2>
+                <p class="text-earth-medium text-lg max-w-2xl mx-auto">Những nụ cười thư giãn bên ly Me Đá, những phút giây chữa lành của khách hàng.</p>
+                <div class="w-24 h-1 bg-earth-medium mx-auto rounded-full mt-6"></div>
+            </div>
+
+            <!-- Displaying the provided collage image in a beautiful frame -->
+            <div class="max-w-4xl mx-auto flex justify-center">
+                <div class="polaroid w-full md:w-3/4 bg-white p-4 pb-16 md:p-6 md:pb-24 shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-500 relative border border-gray-100">
+                    <!-- Pin decoration -->
+                    <div class="absolute top-4 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-red-800 shadow-md border border-red-900 z-20">
+                        <div class="absolute top-1 left-1 w-1 h-1 bg-white rounded-full opacity-50"></div>
+                    </div>
+                    
+                    <div class="overflow-hidden border border-gray-200">
+                        <img src="https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-6/818335252_122102547003482236_1548438392768473842_n.jpg?stp=dst-jpg_tt6&cstp=mx1024x1536&ctp=s1024x1536&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGXuKf1Qzltt1u_GFUzUj_8JuqzxIs_hCYm6rPEiz-EJqI1yavxCv3TdoJB0oSWz9T2uhtumeHGiCrkb3w0rQv_&_nc_ohc=iTDUWoMI9N4Q7kNvwGBk8Xl&_nc_oc=AdrPfT9jHkoHAqfjdZwa9qMAfbQMSK4bBFZcKWFDxi2WzzQlKL0bAms24HvlBSeEvXI&_nc_zt=23&_nc_ht=scontent.fhan14-2.fna&_nc_gid=_2TtP7B0IRJUA1bltHgKhg&_nc_ss=7b2a8&oh=00_AQPQ48kn9ysRGH8T20yfnAl7YOLc6pdUU92hziJQahc73g&oe=6AC9A5D3" alt="Khách hàng thưởng thức Me Đá" class="w-full h-auto object-cover" onerror="this.onerror=null; this.src='https://placehold.co/800x1200/7A5B42/F4F0EA?text=Customer+Gallery';">
+                    </div>
+                    <div class="absolute bottom-4 left-0 w-full text-center">
+                        <p class="font-serif text-xl font-medium text-earth-dark italic">Ký ức cùng Mê Đá</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-earth-dark text-paper-bg pt-16 pb-8 border-t-[10px] border-earth-medium">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <!-- Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 bg-paper-bg text-earth-dark rounded-full flex items-center justify-center overflow-hidden">
+                           <img src="image_12b7bf.jpg" alt="Me Đá Logo Mini" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/40x40/FFFFFF/4A3525?text=M';">
+                        </div>
+                        <span class="font-serif font-bold text-2xl">MÊ Đá</span>
+                    </div>
+                    <p class="text-paper-bg/80 leading-relaxed font-light">
+                        Thức uống dân dã mang tâm hồn Việt. Sống chậm lại, chữa lành tâm hồn và vững bước trên mỗi chặng đường.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-serif font-bold text-xl mb-6 text-paper-light">Khám phá</h4>
+                    <ul class="space-y-3 font-light text-paper-bg/80">
+                        <li><a href="#home" class="hover:text-paper-light transition-colors"><i class="fas fa-chevron-right text-xs mr-2"></i>Trang chủ</a></li>
+                        <li><a href="#story" class="hover:text-paper-light transition-colors"><i class="fas fa-chevron-right text-xs mr-2"></i>Câu chuyện thương hiệu</a></li>
+                        <li><a href="#logo" class="hover:text-paper-light transition-colors"><i class="fas fa-chevron-right text-xs mr-2"></i>Ý nghĩa Logo</a></li>
+                        <li><a href="#gallery" class="hover:text-paper-light transition-colors"><i class="fas fa-chevron-right text-xs mr-2"></i>Khách hàng</a></li>
+                    </ul>
+                </div>
+
+                <!-- Connect -->
+                <div>
+                    <h4 class="font-serif font-bold text-xl mb-6 text-paper-light">Kết nối</h4>
+                    <p class="text-paper-bg/80 mb-4 font-light">Theo dõi chúng tôi để nhận thêm nhiều thông điệp chữa lành mỗi ngày.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-earth-medium flex items-center justify-center hover:bg-paper-bg hover:text-earth-dark transition-all duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-earth-medium flex items-center justify-center hover:bg-paper-bg hover:text-earth-dark transition-all duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-earth-medium flex items-center justify-center hover:bg-paper-bg hover:text-earth-dark transition-all duration-300">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-earth-medium/50 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-paper-bg/60 font-light">
+                <p>&copy; 2026 Mê Đá. Đã đăng ký bản quyền.</p>
+                <p class="mt-2 md:mt-0">Thiết kế với <i class="fas fa-heart text-red-500 mx-1"></i> dành cho tâm hồn Việt.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const icon = btn.querySelector('i');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-md');
+                header.classList.remove('py-2');
+            } else {
+                header.classList.remove('shadow-md');
+                header.classList.add('py-2');
+            }
+        });
+    </script>
+</body>
+</html>
